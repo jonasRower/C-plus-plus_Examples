@@ -1,0 +1,18 @@
+<h3>Substring</h3>
+<p>Ukázka ukazuje jak vkládat substring</p>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;string&gt;</span>
+    <span style="color: #557799">#include &lt;iostream&gt;</span>
+
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+        string text <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;do teto mezery &gt;  &lt; prijde text&quot;</span>;
+        string new_text <span style="color: #333333">=</span> text.substr(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">16</span>) <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot;vlozeny text&quot;</span> <span style="color: #333333">+</span> text.substr(<span style="color: #0000DD; font-weight: bold">18</span>, <span style="color: #0000DD; font-weight: bold">25</span>);
+        cout <span style="color: #333333">&lt;&lt;</span> text <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+        cout <span style="color: #333333">&lt;&lt;</span> new_text <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+    }
+    </pre></div>
+    

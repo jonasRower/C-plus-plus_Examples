@@ -1,0 +1,16 @@
+<h3>Ukázka délky pole</h3>
+<p>Délka pole se zjišťuje pomocí sizeof nebo přes pointer<p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+        <span style="color: #333399; font-weight: bold">int</span> arr[] <span style="color: #333333">=</span> { <span style="color: #0000DD; font-weight: bold">10</span>,<span style="color: #0000DD; font-weight: bold">20</span>,<span style="color: #0000DD; font-weight: bold">30</span>,<span style="color: #0000DD; font-weight: bold">40</span>,<span style="color: #0000DD; font-weight: bold">50</span>,<span style="color: #0000DD; font-weight: bold">60</span> };
+        <span style="color: #333399; font-weight: bold">int</span> arrSize <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span>(arr) <span style="color: #333333">/</span> <span style="color: #008800; font-weight: bold">sizeof</span>(arr[<span style="color: #0000DD; font-weight: bold">0</span>]);
+        <span style="color: #333399; font-weight: bold">int</span> arrSizePointer <span style="color: #333333">=</span> <span style="color: #333333">*</span>(<span style="color: #333333">&amp;</span>arr <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">-</span> arr;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Velikost pole je :   &quot;</span> <span style="color: #333333">&lt;&lt;</span> arrSize <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Velikost pole ziskana pres pointer :   &quot;</span> <span style="color: #333333">&lt;&lt;</span> arrSizePointer <span style="color: #333333">&lt;&lt;</span> endl;
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

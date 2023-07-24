@@ -1,0 +1,27 @@
+<h3>Výstup do txt</h3>
+<p>Do textového souboru vypíše výstup</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;fstream&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+    
+        string vystup <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span>;
+    
+        string cars[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> { <span style="background-color: #fff0f0">&quot;Volvo&quot;</span>, <span style="background-color: #fff0f0">&quot;BMW&quot;</span>, <span style="background-color: #fff0f0">&quot;Ford&quot;</span>, <span style="background-color: #fff0f0">&quot;Mazda&quot;</span> };
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">4</span>; i<span style="color: #333333">++</span>) {
+            vystup <span style="color: #333333">=</span> vystup <span style="color: #333333">+</span> cars[i] <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        }
+    
+        ofstream myfile;
+        myfile.open(<span style="background-color: #fff0f0">&quot;C:</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">Users</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">jonas</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">source</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">repos</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">Pokusy</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">example.txt&quot;</span>);
+        myfile <span style="color: #333333">&lt;&lt;</span> vystup;
+        myfile.close();
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    
+    }
+    </pre></div>
+    

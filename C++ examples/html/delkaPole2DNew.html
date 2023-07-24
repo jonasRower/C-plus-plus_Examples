@@ -1,0 +1,42 @@
+<h3>Ukázka délky pole</h3>
+<p>Pole je deklarováno pomocí klíčového slova  new<p></p>
+<p>Zjišťuje se počet řádků i počet sloupců 2D pole<p>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;stdio.h&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">**</span> array2D;
+    
+        array2D <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">*</span> [<span style="color: #0000DD; font-weight: bold">3</span>];
+    
+        array2D[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span>[<span style="color: #0000DD; font-weight: bold">2</span>];
+        array2D[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>;
+        array2D[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">13</span>;
+    
+        array2D[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span>[<span style="color: #0000DD; font-weight: bold">2</span>];
+        array2D[<span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>;
+        array2D[<span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">15</span>;
+    
+        array2D[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span>[<span style="color: #0000DD; font-weight: bold">2</span>];
+        array2D[<span style="color: #0000DD; font-weight: bold">2</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">8</span>;
+        array2D[<span style="color: #0000DD; font-weight: bold">2</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">18</span>;
+    
+    
+        <span style="color: #888888">//zjisti velikost pole</span>
+        <span style="color: #333399; font-weight: bold">int</span> pocetRadku <span style="color: #333333">=</span> _msize(array2D) <span style="color: #333333">/</span> <span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">int</span>);
+        <span style="color: #333399; font-weight: bold">int</span> pocetSloupcu <span style="color: #333333">=</span> _msize(array2D[<span style="color: #0000DD; font-weight: bold">0</span>]) <span style="color: #333333">/</span> <span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">int</span>);
+    
+    
+        <span style="color: #888888">//vypise velikost pole</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;pocet radku    : &quot;</span> <span style="color: #333333">&lt;&lt;</span> pocetRadku <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;pocet sloupcu  : &quot;</span> <span style="color: #333333">&lt;&lt;</span> pocetSloupcu <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

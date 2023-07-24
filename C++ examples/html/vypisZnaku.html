@@ -1,0 +1,28 @@
+<h3>Výpis z char i string</h3>
+<p>Jak na pole char tak i na String se jednotlive znaky dají načítat pomocí indexů</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt; </span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;						
+        <span style="color: #333399; font-weight: bold">char</span> charr2[<span style="color: #0000DD; font-weight: bold">20</span>] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;jaguar&quot;</span>; 										
+        string str2 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;panter&quot;</span>; 			
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Zde jsou kockovite selmy:</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">&lt;&lt;</span> charr2 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>
+            <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">&lt;&lt;</span> str2 		
+            <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">---------------------------------------------------------</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Lze vypsat pouze dane pismeno jak z char, tak i z string:</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Treti pismeno v &quot;</span> <span style="color: #333333">&lt;&lt;</span> charr2 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; je &quot;</span>
+            <span style="color: #333333">&lt;&lt;</span> charr2[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Treti pismeno v &quot;</span> <span style="color: #333333">&lt;&lt;</span> str2 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; je &quot;</span>
+            <span style="color: #333333">&lt;&lt;</span> str2[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> endl; 	
+    
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>

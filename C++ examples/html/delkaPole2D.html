@@ -1,0 +1,29 @@
+<h3>Ukázka délky pole</h3>
+<p>Zjišťuje se počet řádků i počet sloupců 2D pole<p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        <span style="color: #333399; font-weight: bold">int</span> ary[][<span style="color: #0000DD; font-weight: bold">5</span>] <span style="color: #333333">=</span> { {<span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">4</span>, <span style="color: #0000DD; font-weight: bold">5</span>},
+                       {<span style="color: #0000DD; font-weight: bold">6</span>, <span style="color: #0000DD; font-weight: bold">7</span>, <span style="color: #0000DD; font-weight: bold">8</span>, <span style="color: #0000DD; font-weight: bold">9</span>, <span style="color: #0000DD; font-weight: bold">0</span>}
+        };
+    
+        <span style="color: #333399; font-weight: bold">int</span> rows <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span> ary <span style="color: #333333">/</span> <span style="color: #008800; font-weight: bold">sizeof</span> ary[<span style="color: #0000DD; font-weight: bold">0</span>];
+        <span style="color: #333399; font-weight: bold">int</span> cols <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span> ary[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">/</span> <span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">int</span>);
+    
+        <span style="color: #333399; font-weight: bold">int</span> rowsPointer <span style="color: #333333">=</span> <span style="color: #333333">*</span>(<span style="color: #333333">&amp;</span>ary <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">-</span> ary;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Pocet radku je   :   &quot;</span> <span style="color: #333333">&lt;&lt;</span> rows <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Pocet sloupcu je :   &quot;</span> <span style="color: #333333">&lt;&lt;</span> cols <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Pocet radku pres pointer je   :   &quot;</span> <span style="color: #333333">&lt;&lt;</span> rowsPointer <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    
+    }
+    </pre></div>
+    
+    

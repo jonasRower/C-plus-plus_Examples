@@ -1,0 +1,31 @@
+<h3>Nacitani dat z txt</h3>
+<p>V textovem souboru musi byt cisla oddelena mezerami nebo radky</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">//program nacte soubor, ve kterych na radcich jsou napsana cisla a vrati jejich sumu</span>
+
+    <span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;iomanip&gt;</span>
+    <span style="color: #557799">#include &lt;fstream&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+        <span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #333399; font-weight: bold">int</span> x;
+        ifstream inFile;
+    
+        inFile.open(<span style="background-color: #fff0f0">&quot;C:</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">Users</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">jonas</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">source</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">repos</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">Pokusy</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\\</span><span style="background-color: #fff0f0">example.txt&quot;</span>);
+        <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>inFile) {
+            cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Unable to open file&quot;</span>;
+            exit(<span style="color: #0000DD; font-weight: bold">1</span>); <span style="color: #888888">// terminate with error</span>
+        }
+    
+        <span style="color: #008800; font-weight: bold">while</span> (inFile <span style="color: #333333">&gt;&gt;</span> x) {
+            sum <span style="color: #333333">=</span> sum <span style="color: #333333">+</span> x;
+        }
+    
+        inFile.close();
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Sum = &quot;</span> <span style="color: #333333">&lt;&lt;</span> sum <span style="color: #333333">&lt;&lt;</span> endl;
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

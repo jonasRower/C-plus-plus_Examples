@@ -1,0 +1,35 @@
+<h3>Ukázka třídy</h3>
+<p>Načtení pole, pokud je pole vytvořeno ve třídě</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Variables</span>
+    {
+    <span style="color: #997700; font-weight: bold">public:</span>
+    
+        <span style="color: #888888">//musi byt deklarovany pointer, jinak nejdou nacitat data v main()</span>
+        <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">*</span> Items;
+    
+        Variables()
+        {
+            Items <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span>[<span style="color: #0000DD; font-weight: bold">10</span>];
+            Items[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+            Items[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span>;
+            Items[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3</span>;
+            Items[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>;
+            Items[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>;
+            Items[<span style="color: #0000DD; font-weight: bold">5</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">6</span>;
+        }
+    
+    };
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+        Variables VO;
+        cout <span style="color: #333333">&lt;&lt;</span> VO.Items[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> endl;
+    }
+    </pre></div>
+    

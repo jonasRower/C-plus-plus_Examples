@@ -1,0 +1,30 @@
+<h3>Pointer</h3>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799"></span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+        <span style="color: #333399; font-weight: bold">int</span> updates <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">6</span>; 			<span style="color: #888888">// deklaruje promìnnou</span>
+        <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">*</span> p_updates; 			<span style="color: #888888">// deklaruje ukazatel na int</span>
+    
+        p_updates <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>updates; 	<span style="color: #888888">// prirazuje adresu int ukazateli</span>
+    
+        <span style="color: #333399; font-weight: bold">int</span> donuts <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">6</span>;
+        <span style="color: #333399; font-weight: bold">double</span> cups <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">4.5</span>;
+    
+    
+    <span style="color: #888888">// vyjadruje hodnoty dvema zpusoby</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Hodnoty: updates = &quot;</span> <span style="color: #333333">&lt;&lt;</span> updates;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;, *p_updates = &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #333333">*</span>p_updates <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #888888">// vyjadruje hodnoty dvema zpusoby</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Adresy: &amp;updates = &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #333333">&amp;</span>updates;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;, p_updates = &quot;</span> <span style="color: #333333">&lt;&lt;</span> p_updates <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #888888">// používá ukazatel na zmenu hodnoty</span>
+        <span style="color: #333333">*</span>p_updates <span style="color: #333333">=</span> <span style="color: #333333">*</span>p_updates <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Promenna updates nyni = &quot;</span> <span style="color: #333333">&lt;&lt;</span> updates <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+</pre></div>

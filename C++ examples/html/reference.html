@@ -1,0 +1,59 @@
+<h3>Reference</h3>
+<p>Ukazka predani hodnoty do funkce pomoci adresy</p>
+<p>Je mozne hodnoty ve funkci obcerstvovat a pokud jich je vice pak se nevraci pres return, ale referenci</p>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include&lt;iostream&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+
+
+    <span style="color: #888888">// hodnoty jsou obcerstveny a navraceny referenci, tj. nejsou vraceny pres return</span>
+    <span style="color: #888888">// s vyhodou pouzit, pokud vracim vice hodnot (pres return jde jen jedna)</span>
+    
+    <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">obcerstveniHodnot</span>(<span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&amp;</span> hodnotaA, <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&amp;</span> hodnotaB)
+    {
+    
+        <span style="color: #888888">//obcerstvim hodnoty, tj. vynasobim je 10</span>
+        hodnotaA <span style="color: #333333">=</span> hodnotaA <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+        hodnotaB <span style="color: #333333">=</span> hodnotaB <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+    
+    }
+    
+    
+    <span style="color: #888888">// v nekterych pripadech je lepsi predavat promennou pomoci adresy</span>
+    <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">funkce</span>(string<span style="color: #333333">&amp;</span> hodnota)
+    {
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;jsem ve funkci a predal jsem promennou pomoci adresy : &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> hodnota <span style="color: #333333">&lt;&lt;</span> endl <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;pricemz adresa je stejna jako v main : &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="color: #333333">&amp;</span>hodnota <span style="color: #333333">&lt;&lt;</span> endl <span style="color: #333333">&lt;&lt;</span> endl;
+    }
+    
+    
+    <span style="color: #888888">// ZACATEK PROGRAMU ZDE</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+    
+        string hodnotaMain <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;toto je hodnota&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;jsem v main a adresa hodnoty je nasledujici : &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="color: #333333">&amp;</span>hodnotaMain <span style="color: #333333">&lt;&lt;</span> endl <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #888888">// predam hodnotu do funkce</span>
+        funkce(hodnotaMain);
+    
+        <span style="color: #888888">//---------- obcerstveni hodnot pomoci reference --------------</span>
+        <span style="color: #333399; font-weight: bold">int</span> hodnotaA <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+        <span style="color: #333399; font-weight: bold">int</span> hodnotaB <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">20</span>;
+    
+        <span style="color: #888888">//zavolam funkci, data jiz nevracim</span>
+        obcerstveniHodnot(hodnotaA, hodnotaB);
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;data jsou obcerstena, jsem ve funkci main : &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> hodnotaA <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> hodnotaB <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

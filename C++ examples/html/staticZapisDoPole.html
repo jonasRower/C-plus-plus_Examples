@@ -1,0 +1,67 @@
+<h3>Statická proměnná</h3>
+<p>Statická proměnná odkazuje na index řádku pole na který bude zapisováno</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;cstdlib&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">trida</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+        <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">int</span> poradiVolani;
+        <span style="color: #333399; font-weight: bold">float</span><span style="color: #333333">*</span> pole;
+    
+        <span style="color: #888888">// Konstruktor</span>
+        trida(<span style="color: #333399; font-weight: bold">int</span> pocetPrvku) {
+            alokujPole(pocetPrvku);
+        }
+    
+        <span style="color: #333399; font-weight: bold">void</span> alokujPole(<span style="color: #333399; font-weight: bold">int</span> pocetPrvku)
+        {
+            pole <span style="color: #333333">=</span> (<span style="color: #333399; font-weight: bold">float</span><span style="color: #333333">*</span>)malloc(pocetPrvku <span style="color: #333333">*</span> <span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">float</span>));
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> pocetPrvku; i<span style="color: #333333">++</span>)
+            {
+                pole[i] <span style="color: #333333">=</span> i;
+            }
+        }
+    
+        <span style="color: #333399; font-weight: bold">void</span> zapisIndexDoPole() 
+        {
+            poradiVolani<span style="color: #333333">++</span>;
+            pole[poradiVolani] <span style="color: #333333">=</span> poradiVolani<span style="color: #333333">*</span><span style="color: #0000DD; font-weight: bold">10</span>;
+        }
+    
+        <span style="color: #333399; font-weight: bold">void</span> vytiskniPole(<span style="color: #333399; font-weight: bold">int</span> pocetPrvku)
+        {
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> pocetPrvku; i<span style="color: #333333">++</span>)
+            {
+                cout <span style="color: #333333">&lt;&lt;</span> pole[i] <span style="color: #333333">&lt;&lt;</span> endl;
+            }
+        }
+    
+    };
+    
+    
+    <span style="color: #888888">// Inicializace statického člena třídy</span>
+    <span style="color: #333399; font-weight: bold">int</span> trida<span style="color: #333333">::</span>poradiVolani <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>(<span style="color: #333399; font-weight: bold">void</span>) {
+    
+        <span style="color: #333399; font-weight: bold">int</span> pocetPrvku <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>;
+    
+        <span style="color: #888888">//konstruktor vola alokaci pole</span>
+        trida trida(pocetPrvku);
+        
+        <span style="color: #888888">//kazdym volanim zapise index volani do pole</span>
+        trida.zapisIndexDoPole();
+        trida.zapisIndexDoPole();
+    
+        <span style="color: #888888">//vytiskne pole</span>
+        trida.vytiskniPole(pocetPrvku);
+    
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

@@ -1,0 +1,62 @@
+<h3>Ukázka třídy</h3>
+<p>Předání dat z jedné třídy do druhéa</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">prvniTrida</span> {       
+    <span style="color: #997700; font-weight: bold">public:</span>            
+        <span style="color: #333399; font-weight: bold">int</span> mojeCislo;        
+        string mujString;  
+    
+        prvniTrida() {
+            mojeCislo <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+            mujString <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;toto je muj prvni String&quot;</span>;
+        }
+    
+        <span style="color: #333399; font-weight: bold">int</span> getMojeCislo() {
+            <span style="color: #008800; font-weight: bold">return</span> (mojeCislo);
+        }
+    
+        string getMujString() {
+            <span style="color: #008800; font-weight: bold">return</span> (mujString);
+        }
+    
+    };
+    
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">druhaTrida</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+        <span style="color: #333399; font-weight: bold">int</span> mojeCisloPrevzate;
+        string mujStringPrevzaty;
+    
+        druhaTrida(<span style="color: #333399; font-weight: bold">int</span> mojeCislo, string mujString) {
+    
+            mojeCisloPrevzate <span style="color: #333333">=</span> mojeCislo;
+            mujStringPrevzaty <span style="color: #333333">=</span> mujString;
+    
+            cout <span style="color: #333333">&lt;&lt;</span> mojeCisloPrevzate;
+            cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+            cout <span style="color: #333333">&lt;&lt;</span> mujStringPrevzaty;
+    
+        }
+    };
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+        prvniTrida zadani;
+    
+        <span style="color: #333399; font-weight: bold">int</span> mojeCisloMain;
+        string mujStringMain;
+        
+        <span style="color: #888888">//ziska data z prvni tridy</span>
+        mojeCisloMain <span style="color: #333333">=</span> zadani.getMojeCislo();
+        mujStringMain <span style="color: #333333">=</span> zadani.getMujString();
+    
+        <span style="color: #888888">//zapise data do druhe tridy</span>
+        druhaTrida vystup(mojeCisloMain, mujStringMain);
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

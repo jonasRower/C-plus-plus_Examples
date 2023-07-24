@@ -1,0 +1,39 @@
+<h3>Ukázka třídy</h3>
+<p>Návrat dat pomocí Getru</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #008800; font-weight: bold">class</span>  <span style="color: #BB0066; font-weight: bold">dataHtml</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+        <span style="color: #333399; font-weight: bold">int</span> myNum;
+        string myString;
+    
+        string<span style="color: #333333">*</span> <span style="color: #0066BB; font-weight: bold">getNames</span>() {
+            string<span style="color: #333333">*</span> names <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> string[<span style="color: #0000DD; font-weight: bold">3</span>];
+            names[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Simon&quot;</span>;
+            names[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Peter&quot;</span>;
+            names[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Dave&quot;</span>;
+    
+            <span style="color: #008800; font-weight: bold">return</span> names;
+        }
+    
+    };
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+        dataHtml mujObjekt;
+    
+        string<span style="color: #333333">*</span> pole <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> string[<span style="color: #0000DD; font-weight: bold">3</span>];
+        pole <span style="color: #333333">=</span> mujObjekt.getNames();
+    
+        <span style="color: #888888">//vytiskne data</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;pole[1] &quot;</span> <span style="color: #333333">&lt;&lt;</span> pole[<span style="color: #0000DD; font-weight: bold">1</span>];
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

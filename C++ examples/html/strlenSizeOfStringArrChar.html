@@ -1,0 +1,36 @@
+<h3>Převod z string na char[] + rozdíl mezi strlen / sizeof</h3>
+<p>sizeof - velikost obsazené paměti</p>
+<p>strlen - velikost alokované paměti</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        <span style="color: #888888">//prevadim string &quot;cat&quot; na pole znaku</span>
+        string temp <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;cat&quot;</span>;
+       
+        <span style="color: #888888">//pole char deklaruji s delkou 10</span>
+        <span style="color: #333399; font-weight: bold">char</span> tab2[<span style="color: #0000DD; font-weight: bold">10</span>];
+    
+        <span style="color: #888888">//zapisu data do pole char</span>
+        strncpy_s(tab2, temp.c_str(), <span style="color: #008800; font-weight: bold">sizeof</span>(tab2));
+        tab2[<span style="color: #008800; font-weight: bold">sizeof</span>(tab2) <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    
+        <span style="color: #888888">//zde demonstruji rozdil mezi strlen a sizeof</span>
+        <span style="color: #888888">//strlen udava delku retezce v poli char, tedy jen zabrana pismena</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;strlen :  &quot;</span> <span style="color: #333333">&lt;&lt;</span> strlen(tab2) <span style="color: #333333">&lt;&lt;</span> endl;
+       
+        <span style="color: #888888">//zatimco sizeof udava celkovou na-alokovanou delku, tedy 10</span>
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;sizeof :  &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(tab2) <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        <span style="color: #888888">//nize tiskneme znaky s poctem cyklu do sizeof(tab2)</span>
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(tab2); <span style="color: #333333">++</span>i) {
+            printf(<span style="background-color: #fff0f0">&quot;%3c &quot;</span>, tab2[i]);
+            printf(<span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>);
+        }
+    }
+    </pre></div>
+    

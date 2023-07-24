@@ -1,0 +1,82 @@
+<h3>Pole char 2D - porovnání adres</h3>
+<p>Výsledek programu zobrazuje tabulku, kde jsou porovnány adresy jednotlivých prvků pole char.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+    <span style="color: #557799">#include &lt;iomanip&gt;</span>
+    <span style="color: #557799">#include &lt;sstream&gt;</span>
+    <span style="color: #557799">#include &lt;cstdint&gt;</span>
+    
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    <span style="color: #888888">//funkce jen konvertuje na decimalni vyraz</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">konvertujNaDec</span>(<span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">**</span> adresaHex)
+    {
+        <span style="color: #333399; font-weight: bold">int</span> adresaDec;
+        std<span style="color: #333333">::</span>stringstream stream;
+        stream <span style="color: #333333">&lt;&lt;</span> adresaHex;
+        stream <span style="color: #333333">&gt;&gt;</span> std<span style="color: #333333">::</span>hex <span style="color: #333333">&gt;&gt;</span> adresaDec;
+    
+        <span style="color: #008800; font-weight: bold">return</span>(adresaDec);
+    }
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+        <span style="color: #333399; font-weight: bold">int</span> poleInt[<span style="color: #0000DD; font-weight: bold">4</span>];
+        <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span> adresyCH[<span style="color: #0000DD; font-weight: bold">5</span>];
+        <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">**</span> adresyCH2[<span style="color: #0000DD; font-weight: bold">5</span>];
+        <span style="color: #333399; font-weight: bold">int</span> adresaDec[<span style="color: #0000DD; font-weight: bold">5</span>];
+    
+        <span style="color: #333399; font-weight: bold">char</span> <span style="color: #333333">*</span>h;
+    
+    
+        <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span> CH;
+    
+        CH <span style="color: #333333">=</span> (<span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span>)malloc(<span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">char</span>) <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">5</span>);
+    
+        CH[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;c&#39;</span>;
+        CH[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        CH[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;r&#39;</span>;
+    
+        <span style="color: #888888">//posledni znak musi byt NULL, jinak vypisuje nesmysly</span>
+        CH[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #007020">NULL</span>;
+        
+        <span style="color: #888888">//adresy - ukazuje na prvni index od ktereho uvazuje radek</span>
+        adresyCH[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>CH[<span style="color: #0000DD; font-weight: bold">0</span>];
+        adresyCH[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>CH[<span style="color: #0000DD; font-weight: bold">1</span>];
+        adresyCH[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>CH[<span style="color: #0000DD; font-weight: bold">2</span>];
+        adresyCH[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>CH[<span style="color: #0000DD; font-weight: bold">3</span>];
+        adresyCH[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>CH[<span style="color: #0000DD; font-weight: bold">4</span>];
+    
+        <span style="color: #888888">//adresy - ukazuje na skutecnou adresu daneho znaku</span>
+        adresyCH2[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>adresyCH[<span style="color: #0000DD; font-weight: bold">0</span>];
+        adresyCH2[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>adresyCH[<span style="color: #0000DD; font-weight: bold">1</span>];
+        adresyCH2[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>adresyCH[<span style="color: #0000DD; font-weight: bold">2</span>];
+        adresyCH2[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>adresyCH[<span style="color: #0000DD; font-weight: bold">3</span>];
+        adresyCH2[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #333333">&amp;</span>adresyCH[<span style="color: #0000DD; font-weight: bold">4</span>];
+    
+        <span style="color: #888888">//adresy dekadicke</span>
+        adresaDec[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> konvertujNaDec(adresyCH2[<span style="color: #0000DD; font-weight: bold">0</span>]);
+        adresaDec[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> konvertujNaDec(adresyCH2[<span style="color: #0000DD; font-weight: bold">1</span>]);
+        adresaDec[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> konvertujNaDec(adresyCH2[<span style="color: #0000DD; font-weight: bold">2</span>]);
+        adresaDec[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> konvertujNaDec(adresyCH2[<span style="color: #0000DD; font-weight: bold">3</span>]);
+        adresaDec[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> konvertujNaDec(adresyCH2[<span style="color: #0000DD; font-weight: bold">4</span>]);
+        
+    
+     
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; CH[i] &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; adresyCH[i] &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;   adresyCH2[i] &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;   adresaDec[i] &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; adresaDec([i+1] - [i]) &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;  &quot;</span> <span style="color: #333333">&lt;&lt;</span> CH[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH2[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;              &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;                        &quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;  &quot;</span> <span style="color: #333333">&lt;&lt;</span> CH[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;          &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH2[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;               &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">-</span> adresaDec[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;  &quot;</span> <span style="color: #333333">&lt;&lt;</span> CH[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;           &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH2[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;               &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">-</span> adresaDec[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;&lt;</span> endl;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;  &quot;</span> <span style="color: #333333">&lt;&lt;</span> CH[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;             &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresyCH2[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;         &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;               &quot;</span> <span style="color: #333333">&lt;&lt;</span> adresaDec[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">-</span> adresaDec[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">&lt;&lt;</span> endl;
+        
+        cout <span style="color: #333333">&lt;&lt;</span> endl <span style="color: #333333">&lt;&lt;</span> endl <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; je otazkou jake znaky jsou na mezilehlych bytech, kdyz velikost char je : &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(<span style="color: #333399; font-weight: bold">char</span>) <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; byte&quot;</span> <span style="color: #333333">&lt;&lt;</span> endl;
+        
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    
+    }
+    </pre></div>
+    

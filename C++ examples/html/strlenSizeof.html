@@ -1,0 +1,75 @@
+<h3>Rozdíl mezi strlen a sizeof</h3>
+<p>sizeof - velikost obsazené paměti</p>
+<p>strlen - velikost alokované paměti</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt; </span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+    
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+        <span style="color: #333399; font-weight: bold">char</span> poleZnaku7[<span style="color: #0000DD; font-weight: bold">7</span>];
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;j&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;g&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;u&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">5</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;r&#39;</span>;
+        poleZnaku7[<span style="color: #0000DD; font-weight: bold">6</span>] <span style="color: #333333">=</span> <span style="color: #007020">NULL</span>;
+    
+    
+        <span style="color: #333399; font-weight: bold">char</span> poleZnaku20[<span style="color: #0000DD; font-weight: bold">20</span>];
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;j&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;g&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;u&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">5</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;r&#39;</span>;
+        poleZnaku20[<span style="color: #0000DD; font-weight: bold">6</span>] <span style="color: #333333">=</span> <span style="color: #007020">NULL</span>;
+    
+    
+        <span style="color: #333399; font-weight: bold">char</span> poleZnaku6[<span style="color: #0000DD; font-weight: bold">6</span>];
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;j&#39;</span>;
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;g&#39;</span>;
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;u&#39;</span>;
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span>;
+        poleZnaku6[<span style="color: #0000DD; font-weight: bold">5</span>] <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;r&#39;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;char poleZnaku1[7]  &lt;-- obsahuje presny pocet indexu v poli</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">&lt;&lt;</span> poleZnaku7 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;char poleZnaku1[20]  &lt;-- obsahuje nadmerny pocet indexu v poli</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">&lt;&lt;</span> poleZnaku7 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;je-li na poslednim znaku NULL, pak mu to necini potize</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;------------------------------------------------</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;char poleZnaku6[6]  &lt;-- neobsahuje NULL na konci</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;i kdyz odpovida poctu znaku, vypisuje hlouposti</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">&lt;&lt;</span> poleZnaku6 <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;------------------------------------------------</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;to take vysvetluje sizeof a strlen</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;sizeof popisuje velikost obsazeneho pole (obsazenou pamet)</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;zatimco strlen velikost alokovane pameti</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;je-li tudiz retezec ukoncen znakem NULL, pak je vse OK</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">sizeof(poleZnaku7) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(poleZnaku7);
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">strlen(poleZnaku7) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> strlen(poleZnaku7);
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">sizeof(poleZnaku20) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(poleZnaku20);
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">strlen(poleZnaku20) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> strlen(poleZnaku20);
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n\n</span><span style="background-color: #fff0f0">neni-li retezec ukoncen znakem NULL, pak je naalokovana vyssi pamet nez je potrebna a pri vypisu se i zobrazuji nevalidni znaky</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">sizeof(poleZnaku6) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> <span style="color: #008800; font-weight: bold">sizeof</span>(poleZnaku6);
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">strlen(poleZnaku6) = &quot;</span> <span style="color: #333333">&lt;&lt;</span> strlen(poleZnaku6);
+    
+    
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

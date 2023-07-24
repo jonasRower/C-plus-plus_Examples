@@ -1,0 +1,44 @@
+<h3>Statická proměnná</h3>
+<p>Využití pro zjištění kolikrát byla daná metoda volána.</p>
+<p>I když se může jednat o jinou instanci třídy</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">trida</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+        <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">int</span> poradiVolani;
+    
+        <span style="color: #888888">// Konstruktor</span>
+        trida() {
+            <span style="color: #888888">//Zde mohou byt nejaka vychozi data</span>
+        }
+    
+        <span style="color: #333399; font-weight: bold">void</span> vratPoradiVolani() {
+    
+            poradiVolani<span style="color: #333333">++</span>;
+            cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Poradi volani je : &quot;</span> <span style="color: #333333">&lt;&lt;</span> poradiVolani <span style="color: #333333">&lt;&lt;</span> endl;
+    
+        }
+        
+    };
+    
+    <span style="color: #888888">// Inicializace statického člena třídy</span>
+    <span style="color: #333399; font-weight: bold">int</span> trida<span style="color: #333333">::</span>poradiVolani <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>(<span style="color: #333399; font-weight: bold">void</span>) {
+    
+        <span style="color: #888888">// i kdyz jsou 2 tridy poradiVolani se pocita jen jednou</span>
+        trida tridaA;
+        trida tridaB;
+    
+        tridaA.vratPoradiVolani();
+        tridaB.vratPoradiVolani();
+        tridaA.vratPoradiVolani();
+        tridaB.vratPoradiVolani();
+    
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>

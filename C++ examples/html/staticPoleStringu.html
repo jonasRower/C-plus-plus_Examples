@@ -1,0 +1,83 @@
+<h3>Statické pole stringu</h3>
+<p>Pole stringu je zde nahrazeno const char*</p>
+<p>Statická data jsou uvnitř třídy</p>
+<p>Jednotlivé položky pole je potřeba překonvertovat ze stringu pomocí const char* tempCH = zapisStr2.c_str(); </p>
+<p>Do dané metody je třeba předat adresu dat, jinak se zapisují data jiná</p>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #557799">#include &lt;string&gt;</span>
+
+    <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+    
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">tridaZapisDataDoPole</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+    
+        <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">int</span> poradiVolani;
+        <span style="color: #008800; font-weight: bold">static</span> <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span> pole[<span style="color: #0000DD; font-weight: bold">10</span>];
+    
+        <span style="color: #888888">//konstruktor bezparametru</span>
+        tridaZapisDataDoPole()
+        {
+            <span style="color: #888888">//nedela nic</span>
+            <span style="color: #888888">//instanci tohoto konstruktoru je volana metoda &quot;TiskPole&quot;</span>
+        }
+    
+        <span style="color: #888888">//konstruktor pretizeny</span>
+        <span style="color: #888888">//je potreba predavat data pomoci adresy, jinak se do pole const char* vkladaji jina data</span>
+        tridaZapisDataDoPole(string<span style="color: #333333">&amp;</span> zapisStr2)
+        {
+            poradiVolani<span style="color: #333333">++</span>;
+    
+            <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span> tempCH <span style="color: #333333">=</span> zapisStr2.c_str();
+            pole[poradiVolani] <span style="color: #333333">=</span> tempCH;
+            
+        }
+    
+        <span style="color: #333399; font-weight: bold">void</span> TiskPole() {
+    
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> poradiVolani<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>; i<span style="color: #333333">++</span>)
+            {
+                 cout <span style="color: #333333">&lt;&lt;</span> pole[i] <span style="color: #333333">&lt;&lt;</span> endl;
+            }
+        }
+    
+    };
+    
+    
+    <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">tridaTiskPole</span> {
+    <span style="color: #997700; font-weight: bold">public:</span>
+    
+        <span style="color: #888888">// tisk pole je mozny jen tak, </span>
+        <span style="color: #888888">// ze vytvorim novou instanci tridy, kde je pole uchovano</span>
+        <span style="color: #888888">// a vytisknu pole pomovi metody v teze tride</span>
+    
+        <span style="color: #888888">//odsud nelze statická data tisknout</span>
+    
+        tridaTiskPole() {
+            tridaZapisDataDoPole instanceProTiskPole;
+            instanceProTiskPole.TiskPole();
+        }
+    
+    };
+    
+    
+    <span style="color: #888888">// Inicializace statickeho clena tridy</span>
+    <span style="color: #333399; font-weight: bold">int</span> tridaZapisDataDoPole<span style="color: #333333">::</span>poradiVolani <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;
+    <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">*</span> tridaZapisDataDoPole<span style="color: #333333">::</span>pole[<span style="color: #0000DD; font-weight: bold">10</span>];
+    
+    
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>() {
+    
+        string zapisStr1 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;zapis data 1&quot;</span>;
+        string zapisStr2 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;zapis data 2&quot;</span>;
+    
+        tridaZapisDataDoPole zapisDataDoPole(zapisStr1);
+        tridaZapisDataDoPole zapisDataDoPole2(zapisStr2);
+        tridaTiskPole tiskPole;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
+    

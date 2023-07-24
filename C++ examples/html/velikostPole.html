@@ -1,0 +1,26 @@
+<h3>Ukázka kódu pole</h3>
+<p>Pomocí sizeof se zjistí velikost pole</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>()
+    {
+        <span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+        <span style="color: #333399; font-weight: bold">int</span> pole[<span style="color: #0000DD; font-weight: bold">3</span>]; 	
+        pole[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">7</span>;
+        pole[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">8</span>;
+        pole[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">6</span>;
+    
+        <span style="color: #333399; font-weight: bold">int</span> velikostPole <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span> pole;
+        <span style="color: #333399; font-weight: bold">int</span> velikostJednohoPrvku <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span> pole[<span style="color: #0000DD; font-weight: bold">0</span>];
+        <span style="color: #333399; font-weight: bold">int</span> pocetPrvku <span style="color: #333333">=</span> velikostPole <span style="color: #333333">/</span> velikostJednohoPrvku;
+    
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">Velikost pole = &quot;</span> <span style="color: #333333">&lt;&lt;</span> velikostPole;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; bajtu.</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Velikost jednoho prvku = &quot;</span> <span style="color: #333333">&lt;&lt;</span> velikostJednohoPrvku;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot; bajty.</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Pocet prvku v poli = &quot;</span> <span style="color: #333333">&lt;&lt;</span> pocetPrvku;
+        cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>;
+    
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    }
+    </pre></div>
